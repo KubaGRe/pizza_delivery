@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    <bean id="pizzadelivery" class="PizzaDelivery">
+        <property name="pizzaBake" ref="pizzabake" />
+        <property name="deliveredBy" value="Car" />
+    </bean>
+
+    <bean id="pizzabake" class="PizzaBake">
+
+    </bean>
+
+    <bean id="pizzaorder" class="PizzaOrder">
+        <property name="pizzaDelivery" ref="pizzadelivery" />
+        <property name="pizzaOrder" value="Phone" />
+    </bean>
+
+    <bean id="consumer" class="Consumer">
+        <property name="pizzaOrder" ref="pizzaorder" />
+        <property name="name" value="Angela" />
+    </bean>
+
+</beans>
+
