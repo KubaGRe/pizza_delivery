@@ -2,7 +2,7 @@ package dev.grela.jakub.pizza_delivery;
 
 public class PizzaOrder implements IPizzaOrder{
     /*W tej klasie wywoływana jest metoda deliverPizza() z klasy PizzaDelivery*/
-    public PizzaDelivery pizzaDelivery;
+    private PizzaDelivery pizzaDelivery;
     private String pizzaOrder;
 
     public void setPizzaDelivery(PizzaDelivery pizzaDelivery) {
@@ -15,6 +15,8 @@ public class PizzaOrder implements IPizzaOrder{
 
     @Override
     public Pizza orderPizza() {
-        return pizzaDelivery.deliverPizza();
+        Pizza pizza = pizzaDelivery.deliverPizza();
+        pizza.setOrderedHow(pizzaOrder);
+        return pizza;
     }
 }

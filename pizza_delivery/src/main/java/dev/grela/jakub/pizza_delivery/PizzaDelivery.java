@@ -15,6 +15,8 @@ public class PizzaDelivery implements IPizzaDelivery{
 
     @Override
     public Pizza deliverPizza() {
-        return pizzaBake.bakePizza();
+        Pizza pizza = pizzaBake.bakePizza();
+        pizza.setDeliveredBy(deliveredBy);
+        return pizza;
     }
 }
